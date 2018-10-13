@@ -44,7 +44,7 @@
 
 class SerialCommand {
   public:
-    SerialCommand(HardwareSerial &serialToUse=Serial);      // Constructor
+    SerialCommand(Stream &serialToUse=Serial);      // Constructor
     void addCommand(const char *command, void(*function)());  // Add a command to the processing dictionary.
     void setDefaultHandler(void (*function)(const char *));   // A handler to call when no valid command received.
 
@@ -54,7 +54,7 @@ class SerialCommand {
 
   private:
 
-    HardwareSerial &theSerial;
+    Stream &theSerial;
 
     // Command/handler dictionary
     struct SerialCommandCallback {

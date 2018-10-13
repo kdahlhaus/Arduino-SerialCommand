@@ -27,7 +27,7 @@
 /**
  * Constructor makes sure some things are set.
  */
-SerialCommand::SerialCommand(HardwareSerial &serialToUse)
+SerialCommand::SerialCommand(Stream &serialToUse)
   : theSerial(serialToUse), 
     commandList(NULL),
     commandCount(0),
