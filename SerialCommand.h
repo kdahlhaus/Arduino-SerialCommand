@@ -52,9 +52,12 @@ class SerialCommand {
     void clearBuffer();   // Clears the input buffer.
     char *next();         // Returns pointer to next token found in command buffer (for getting arguments to commands).
 
+    // return the stream (so data can be written)
+    Stream &stream() { return theSerial; }
+                                                                                                           
   private:
 
-    Stream &theSerial;
+    Stream &theSerial;                                                                                  
 
     // Command/handler dictionary
     struct SerialCommandCallback {
